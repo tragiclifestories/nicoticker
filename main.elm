@@ -6,12 +6,15 @@ import Time exposing (Time, second)
 origTime = 1463324400
 
 fmtTime time =
-  let days = time // (60 * 60 * 24)
-      hours = (time // (60 * 60)) - days * 24
-      minutes = (time // 60) - (hours * 60) - (days * 60 * 24)
-      seconds = time `rem` 60
-    in (toString days) ++ " days, " ++ (toString hours) ++ " hours, " 
-    ++ (toString minutes) ++ " minutes, and " ++ (toString seconds) ++ " seconds"
+  case time of 
+    0 -> " ... "
+    _ -> 
+      let days = time // (60 * 60 * 24)
+          hours = (time // (60 * 60)) - days * 24
+          minutes = (time // 60) - (hours * 60) - (days * 60 * 24)
+          seconds = time `rem` 60
+        in (toString days) ++ " days, " ++ (toString hours) ++ " hours, " 
+        ++ (toString minutes) ++ " minutes, and " ++ (toString seconds) ++ " seconds"
 
 main =
   App.program
@@ -29,7 +32,7 @@ type alias Model = Int
 
 init : (Model, Cmd Msg)
 init =
-  (origTime, Cmd.none)
+  (0, Cmd.none)
 
 
 -- UPDATE

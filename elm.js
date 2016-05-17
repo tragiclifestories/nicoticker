@@ -7540,33 +7540,39 @@ var _elm_lang$html$Html_Attributes$classList = function (list) {
 };
 var _elm_lang$html$Html_Attributes$style = _elm_lang$virtual_dom$VirtualDom$style;
 
+var _user$project$Main$init = {ctor: '_Tuple2', _0: 0, _1: _elm_lang$core$Platform_Cmd$none};
 var _user$project$Main$fmtTime = function (time) {
-	var seconds = A2(_elm_lang$core$Basics$rem, time, 60);
-	var days = (time / ((60 * 60) * 24)) | 0;
-	var hours = ((time / (60 * 60)) | 0) - (days * 24);
-	var minutes = (((time / 60) | 0) - (hours * 60)) - ((days * 60) * 24);
-	return A2(
-		_elm_lang$core$Basics_ops['++'],
-		_elm_lang$core$Basics$toString(days),
-		A2(
+	var _p0 = time;
+	if (_p0 === 0) {
+		return ' ... ';
+	} else {
+		var seconds = A2(_elm_lang$core$Basics$rem, time, 60);
+		var days = (time / ((60 * 60) * 24)) | 0;
+		var hours = ((time / (60 * 60)) | 0) - (days * 24);
+		var minutes = (((time / 60) | 0) - (hours * 60)) - ((days * 60) * 24);
+		return A2(
 			_elm_lang$core$Basics_ops['++'],
-			' days, ',
+			_elm_lang$core$Basics$toString(days),
 			A2(
 				_elm_lang$core$Basics_ops['++'],
-				_elm_lang$core$Basics$toString(hours),
+				' days, ',
 				A2(
 					_elm_lang$core$Basics_ops['++'],
-					' hours, ',
+					_elm_lang$core$Basics$toString(hours),
 					A2(
 						_elm_lang$core$Basics_ops['++'],
-						_elm_lang$core$Basics$toString(minutes),
+						' hours, ',
 						A2(
 							_elm_lang$core$Basics_ops['++'],
-							' minutes, and ',
+							_elm_lang$core$Basics$toString(minutes),
 							A2(
 								_elm_lang$core$Basics_ops['++'],
-								_elm_lang$core$Basics$toString(seconds),
-								' seconds')))))));
+								' minutes, and ',
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									_elm_lang$core$Basics$toString(seconds),
+									' seconds')))))));
+	}
 };
 var _user$project$Main$view = function (model) {
 	return A2(
@@ -7607,12 +7613,11 @@ var _user$project$Main$view = function (model) {
 			]));
 };
 var _user$project$Main$origTime = 1463324400;
-var _user$project$Main$init = {ctor: '_Tuple2', _0: _user$project$Main$origTime, _1: _elm_lang$core$Platform_Cmd$none};
 var _user$project$Main$update = F2(
 	function (action, model) {
-		var _p0 = action;
+		var _p1 = action;
 		var inttime = _elm_lang$core$Basics$round(
-			_elm_lang$core$Time$inSeconds(_p0._0));
+			_elm_lang$core$Time$inSeconds(_p1._0));
 		return {ctor: '_Tuple2', _0: inttime - _user$project$Main$origTime, _1: _elm_lang$core$Platform_Cmd$none};
 	});
 var _user$project$Main$Tick = function (a) {
