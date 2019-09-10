@@ -1,1 +1,2 @@
-FROM alpine:3.10
+FROM alpine:latest AS youbellend
+FROM ruby
