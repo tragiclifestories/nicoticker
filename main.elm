@@ -3,7 +3,7 @@ import Html.App as App
 import Html.Attributes exposing (..)
 import Time exposing (Time, second)
 
-origTime = 1463324400
+origTime = 1592679600000
 
 fmtTime time =
   let days = time // (60 * 60 * 24)
