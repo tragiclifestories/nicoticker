@@ -7,5 +7,12 @@ metadata:
     'github.com/project-slug': tragiclifestories/nicoticker 
 spec:
   type: website
-  ownedBy: User:tragiclifestories
+  owner: User:tragiclifestories
   lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: tragiclifestories
+spec:
+  memberOf: []
