@@ -1,0 +1,11 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: nicoticker
+  annotations:
+    'github.com/project-slug': tragiclifestories/nicoticker 
+spec:
+  type: website
+  ownedBy: User:tragiclifestories
+  lifecycle: production
